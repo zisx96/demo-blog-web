@@ -1,0 +1,304 @@
+html,body{
+
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container1 {
+
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    gap: 70px;
+  
+}
+
+.header-main{
+
+    width: 100%;
+   
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 70px;
+   
+}
+
+.search-box{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+input[type="search"] {
+    border: none; 
+    outline: none;
+    padding: 10px 10px; 
+    border-radius: 5px;
+}
+
+.flex-container2 {
+
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    gap: 40px;
+    
+}
+
+.nav-container{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10%;
+    background-color: rgb(222, 241, 240);
+    padding: 15px;
+    
+}
+
+.nav-link {
+
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link:hover{
+
+    color: turquoise;
+}
+
+.footer-container1{
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    background-color: rgb(210, 225, 225);
+    margin: 0;
+    padding: 20px
+}
+
+.block1{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-touch{
+
+    text-decoration: none;
+    color: black;
+}
+
+.footer-head1{
+
+    text-align: center;
+    color: black;
+}
+
+.footer-container2{
+
+    display: flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(222, 241, 240);
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.footer-container3{
+    
+    background-color: rgb(222, 241, 240);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: auto;
+}
+
+.footer-svg{
+
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    
+}
+
+.main-container1{
+
+    background-image: url(/images/main.jpg);
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    
+}
+
+.para-main{
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    padding-top: 30px;
+    color: rgb(133, 132, 132);
+}
+
+.main-container2{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 20px;
+    padding-bottom: 30px;
+}
+
+.button-photo3{
+
+    background-image: url("/images/middle/relax2.jpg");
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.button-photo2{
+
+    background-image: url("/images/middle/angel-food-cake-2.jpg");
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.button-photo1{
+
+    background-image: url("/images/middle/travel2.jpg");
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    
+
+}
+
+#btns{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-item{
+
+    font-size: 20px;
+    padding: 10px;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    width: 90px;
+}
+
+.btn-item:hover{
+
+    background-color: rgb(177, 186, 252);
+}
+
+.main-container3{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 30px;
+}
+
+.inside-img{
+
+    padding-left: 30px;
+    padding-right: 30px;
+    border-style: hidden;
+    margin-bottom: 0;
+   
+}
+
+.main-img{
+
+    border-radius: 10px;
+}
+
+.main-container4{
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(222, 241, 240);
+    padding: 40px;
+    margin: 40px;
+}
+
+.post-actions{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.post-creation{
+
+    display: flex;
+    justify-content: center;
+    border-style: none;
+    gap: 20px;
+    align-items: center;
+    
+}
+
+#post-btn{
+
+    border-radius: 30px;
+    height: 50px;
+    background-color: rgb(222, 241, 240);
+    border-style: none;
+    width: 100px;
+    color: black;
+}
+
+.border-text{
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgb(222, 241, 240);
+}
+
+.about-container{
+
+    margin: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-para{
+
+    font-size: 14px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.travel-des{
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 80px;
+    padding-left: 250px;
+    
+}

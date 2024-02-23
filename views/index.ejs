@@ -1,0 +1,214 @@
+<%- include("partials/header.ejs") %>
+
+<div class="main-container1">
+  <p style="margin: auto; font-size: 30px; padding-top: 50px">Travel Blog</p>
+  <h2 style="font-size: 50px">Going Places</h2>
+  <p style="font-size: 20px">I haven’t been everywhere, but it’s on my list</p>
+</div>
+
+<div class="para-main">
+  <p>
+    Welcome to Gastronomic Journeys, a delectable odyssey through the world of
+    travel and cuisine.<br /><br />
+    Join me as I embark on epicurean adventures across continents,<br /><br />
+    indulging in tantalizing flavors, savoring mouthwatering dishes, and
+    uncovering the culinary treasures that enrich our lives.
+  </p>
+</div>
+
+<div class="main-container2">
+  <div class="button-photo1" id="btns">
+    <form action="/travel" method="get">
+      <button class="btn-item" type="submit">Travel</button>
+    </form>
+  </div>
+  <div class="button-photo2" id="btns">
+    <form action="/eat" method="get">
+      <button class="btn-item" type="submit">Eat</button>
+    </form>
+  </div>
+  <div class="button-photo3" id="btns">
+    <form action="/relax" method="get">
+      <button class="btn-item" type="submit">Relax</button>
+    </form>
+  </div>
+</div>
+
+<section class="main-container4">
+  <div>
+    <h3>As featured in |</h3>
+  </div>
+  <div>
+    <img src="/images/logos/logo1.png" height="60" style="border-radius: 20px;" alt="bizinsider" />
+  </div>
+  <div>
+    <img src="/images/logos/logo2.png" height="60" style="border-radius: 20px;" alt="mashable" />
+  </div>
+  <div>
+    <img src="/images/logos/logo3.png" height="60" style="border-radius: 20px;" alt="techcrunch" />
+  </div>
+  <div>
+    <img src="/images/logos/logo4.png" height="60" style="border-radius: 20px;" alt="tnw" />
+  </div>
+</section>
+
+<section class="main-container3">
+  <h2
+    style="
+      font-size: 50px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+      font-weight: bold;
+    ">
+    Highlights
+  </h2>
+
+  <div>
+    <img
+      class="main-img"
+      src="/images/travel/travelmain2.jpg"
+      height="550"
+      width="1000"
+      alt="travel images"
+    />
+    <div class="inside-img">
+      <br />
+      <div>
+        <p>
+          <img
+            style="border-radius: 50%"
+            src="/images/pic1.png"
+            alt="profile-pic"
+          />
+          Admin
+        </p>
+        <h4>The blog post Trvelling</h4>
+        <p>
+          Create a blog post subtitle that summarizes your post in a few short,
+          punchy sentences and entices your audience to<br />
+          continue reading....
+        </p>
+        <hr />
+        
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <img
+      class="main-img"
+      src="/images/relax/relaxmain1.jpg"
+      height="550"
+      width="1000"
+      alt="travel images"
+    />
+    <div class="inside-img">
+      <br />
+      <div>
+        <p>
+          <img
+            style="border-radius: 50%"
+            src="/images/pic1.png"
+            alt="profile-pic"
+          />
+          Admin
+        </p>
+        <h4>The blog post Trvelling</h4>
+        <p>
+          Create a blog post subtitle that summarizes your post in a few short,
+          punchy sentences and entices your audience to<br />
+          continue reading....
+        </p>
+        <hr />
+        
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <img
+      class="main-img"
+      src="/images/eat/eatmain2.jpg"
+      height="550"
+      width="1000"
+      alt="travel images"
+    />
+    <div class="inside-img">
+      <br />
+      <div>
+        <p>
+          <img
+            style="border-radius: 50%"
+            src="/images/pic1.png"
+            alt="profile-pic"
+          />
+          Admin
+        </p>
+        <h4>The blog post Trvelling</h4>
+        <p>
+          Create a blog post subtitle that summarizes your post in a few short,
+          punchy sentences and entices your audience to<br />
+          continue reading....
+        </p>
+        <hr />
+        
+      </div>
+    </div>
+  </div>
+
+  <!--post creation-->
+<section>
+    <% if (posts.length > 0) { %>
+        <% posts.forEach((post, index) => { %>
+            <div class="post-container">
+                <img class="main-img" src="<%= post.image %>" height="550" width="1000" alt="travel images">
+                <div class="inside-img">
+                    <br>
+                    <div>
+                        <p><img style="border-radius: 50%;" src="/images/pic1.png" alt="profile-pic"> <%= post.username %></p>
+                        <h2><%= post.title %></h2>
+                        <p><%= post.content %></p>
+                        <hr><br>
+                        <form class="post-actions"  action="/delete" method="POST">
+                            <input type="hidden" name="index" value="<%= index %>">
+                            <button id="post-btn" type="submit">Delete</button>
+                        
+                        <form class="post-actions" action="/update" method="POST">
+                            <input type="hidden" name="index" value="<%= index %>">
+                            <input type="text" name="title" placeholder="New Title">
+                            <textarea name="content" placeholder="New Content"></textarea>
+                            <button id="post-btn" type="submit">Update</button>
+                        </form>
+                    </form>
+                    </div><br><br>
+                </div>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p style="text-align: center;">No posts available &#128511;</p>
+    <% } %>
+    <br>
+    <br>
+    
+    <!-- New post form -->
+    <h3 style="text-align: center; font-size: 30px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Now Create Your Own Post</h3>
+    <br><br>
+    <form class="post-creation" action="/post" method="POST" enctype="multipart/form-data">
+        <div class="border-text">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="username" placeholder="Your Name">
+        <textarea name="content" placeholder="Content"></textarea>
+        </div>
+        <input type="file" name="image" accept="image/*">
+        <button id="post-btn" type="submit">Create Post</button>
+    </form>
+    
+    </section>
+
+</section>
+<br>
+<br>
+
+
+
+<%- include("partials/footer.ejs") %>

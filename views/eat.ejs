@@ -1,0 +1,160 @@
+<%- include("partials/header.ejs") %>
+
+<div class="travel-des" >
+    <h3 style="font-size: 30px;" >
+        Eat
+    </h3>
+    <br>
+    <p  style="font-size: 15px;">
+        Exploring culinary delights opens doors to new flavors, cultures, and perspectives.<br> It's about savoring the richness of diverse cuisines and embracing the unfamiliar. 
+    </p>
+</div>
+
+<section class="main-container3">
+  
+    <div>
+      <img
+        class="main-img"
+        src="/images/eat/eatmain1.jpg"
+        height="550"
+        width="1000"
+        alt="travel images"
+      />
+      <div class="inside-img">
+        <br />
+        <div>
+          <p>
+            <img
+              style="border-radius: 50%"
+              src="/images/pic1.png"
+              alt="profile-pic"
+            />
+            Admin
+          </p>
+          <h4>The blog post Trvelling</h4>
+          <p>
+            Create a blog post subtitle that summarizes your post in a few short,
+            punchy sentences and entices your audience to<br />
+            continue reading....
+          </p>
+          <hr />
+          
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <img
+        class="main-img"
+        src="/images/eat/eatmain2.jpg"
+        height="550"
+        width="1000"
+        alt="travel images"
+      />
+      <div class="inside-img">
+        <br />
+        <div>
+          <p>
+            <img
+              style="border-radius: 50%"
+              src="/images/pic1.png"
+              alt="profile-pic"
+            />
+            Admin
+          </p>
+          <h4>The blog post Trvelling</h4>
+          <p>
+            Create a blog post subtitle that summarizes your post in a few short,
+            punchy sentences and entices your audience to<br />
+            continue reading....
+          </p>
+          <hr />
+          
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <img
+        class="main-img"
+        src="/images/eat/eatmain3.jpg"
+        height="550"
+        width="1000"
+        alt="travel images"
+      />
+      <div class="inside-img">
+        <br />
+        <div>
+          <p>
+            <img
+              style="border-radius: 50%"
+              src="/images/pic1.png"
+              alt="profile-pic"
+            />
+            Admin
+          </p>
+          <h4>The blog post Trvelling</h4>
+          <p>
+            Create a blog post subtitle that summarizes your post in a few short,
+            punchy sentences and entices your audience to<br />
+            continue reading....
+          </p>
+          <hr />
+          
+        </div>
+      </div>
+    </div>
+  
+    <!--post creation-->
+  <section>
+      <% if (posts.length > 0) { %>
+          <% posts.forEach((post, index) => { %>
+              <div class="post-container">
+                  <img class="main-img" src="<%= post.image %>" height="550" width="1000" alt="travel images">
+                  <div class="inside-img">
+                      <br>
+                      <div>
+                          <p><img style="border-radius: 50%;" src="/images/pic1.png" alt="profile-pic"> <%= post.username %></p>
+                          <h2><%= post.title %></h2>
+                          <p><%= post.content %></p>
+                          <hr><br>
+                          <form class="post-actions"  action="/delete" method="POST">
+                              <input type="hidden" name="index" value="<%= index %>">
+                              <button id="post-btn" type="submit">Delete</button>
+                          
+                          <form class="post-actions" action="/update" method="POST">
+                              <input type="hidden" name="index" value="<%= index %>">
+                              <input type="text" name="title" placeholder="New Title">
+                              <textarea name="content" placeholder="New Content"></textarea>
+                              <button id="post-btn" type="submit">Update</button>
+                          </form>
+                      </form>
+                      </div><br><br>
+                  </div>
+              </div>
+          <% }) %>
+      <% } else { %>
+          <p>No posts available &#128511;</p>
+      <% } %>
+      <br>
+      <br>
+      
+      <!-- New post form -->
+      <h3 style="text-align: center; font-size: 30px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Now Create Your Own Post</h3>
+      <br><br>
+      <form class="post-creation" action="/post" method="POST" enctype="multipart/form-data">
+          <div class="border-text">
+          <input type="text" name="title" placeholder="Title">
+          <input type="text" name="username" placeholder="Your Name">
+          <textarea name="content" placeholder="Content"></textarea>
+          </div>
+          <input type="file" name="image" accept="image/*">
+          <button id="post-btn" type="submit">Create Post</button>
+      </form>
+      
+      </section>
+  
+  </section>
+
+
+<%- include("partials/footer.ejs") %>
